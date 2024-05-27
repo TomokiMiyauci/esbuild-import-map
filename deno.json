@@ -1,6 +1,6 @@
 {
   "name": "@miyauci/esbuild-import-map",
-  "exports": "./mod.ts",
+  "exports": "./src/mod.ts",
   "lint": {
     "exclude": ["vendor"]
   },
