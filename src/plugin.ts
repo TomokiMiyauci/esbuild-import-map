@@ -22,6 +22,26 @@ export interface ImportMapPluginArgs {
 
 const done = Symbol("done");
 
+/** Create import-map plugin for esbuild.
+ *
+ * @example
+ * ```ts
+ * import { importMapPlugin } from "@miyauci/esbuild-import-map";
+ * import { build } from "esbuild";
+ *
+ * await build({
+ *   stdin: { contents: `import "react";` },
+ *   plugins: [importMapPlugin({
+ *     baseURL: import.meta.resolve("./import_map.json"),
+ *     importMap: {
+ *       imports: { "react": "npm:react@^18" },
+ *     },
+ *   })],
+ *   bundle: true,
+ *   format: "esm",
+ * });
+ * ```
+ */
 export function importMapPlugin(args: Readonly<ImportMapPluginArgs>): Plugin {
   return {
     name: "import-map",
