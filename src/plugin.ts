@@ -1,12 +1,9 @@
-import {
-  fromFileUrl,
-  type ImportMapJson,
-  isAbsolute,
-  parseFromJson,
-  type Plugin,
-  toFileUrl,
-} from "../deps.ts";
+import { toFileUrl } from "@std/path/to-file-url";
+import { fromFileUrl } from "@std/path/from-file-url";
+import { isAbsolute } from "@std/path/is-absolute";
+import { type ImportMapJson, parseFromJson } from "import_map";
 import { importMapToRegExp } from "./regexp.ts";
+import type { Plugin } from "esbuild";
 
 export interface ImportMap {
   imports?: Record<string, string>;

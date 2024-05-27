@@ -1,0 +1,25 @@
+{
+  "name": "@miyauci/esbuild-import-map",
+  "exports": "./mod.ts",
+  "lint": {
+    "exclude": ["vendor"]
+  },
+  "test": {
+    "exclude": ["vendor"]
+  },
+  "fmt": {
+    "exclude": ["vendor"]
+  },
+  "imports": {
+    "@miyauci/esbuild-import-map": "./mod.ts",
+    "esbuild": "npm:/esbuild@^0.21.0",
+    "import_map": "./vendor/deno.land/x/import_map@v0.19.1/mod.ts",
+    "@std/path/from-file-url": "jsr:/@std/path@^0.225.1/from-file-url",
+    "@std/path/is-absolute": "jsr:/@std/path@^0.225.1/is-absolute",
+    "@std/path/to-file-url": "jsr:/@std/path@^0.225.1/to-file-url",
+    "@std/regexp": "jsr:/@std/regexp@^0.224.1",
+    "@std/collections/distinct": "jsr:/@std/collections@^0.224.1/distinct",
+    "@std/testing/bdd": "jsr:@std/testing@^0.224.0/bdd",
+    "@std/expect": "jsr:@std/expect@^0.224.2"
+  }
+}

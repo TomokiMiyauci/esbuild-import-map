@@ -1,4 +1,5 @@
-import { describe, expect, it } from "../dev_deps.ts";
+import { describe, it } from "@std/testing/bdd";
+import { expect } from "@std/expect";
 import { type ImportMapLike, importMapToRegExp } from "./regexp.ts";
 
 describe("importMapToRegExp", () => {

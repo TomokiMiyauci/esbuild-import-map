@@ -1,4 +1,5 @@
-import { distinct, escape } from "../deps.ts";
+import { distinct } from "@std/collections/distinct";
+import { escape } from "@std/regexp";
 
 export interface ImportMapLike {
   imports?: Record<string, unknown>;
