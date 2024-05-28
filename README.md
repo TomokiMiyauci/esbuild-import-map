@@ -1,6 +1,6 @@
 # esbuild-import-map
 
-[ESBuild](https://github.com/evanw/esbuild) plugin for
+An [esbuild](https://github.com/evanw/esbuild) plugin for
 [import-maps](https://github.com/WICG/import-maps#multiple-import-map-support).
 
 ## Table of Contents <!-- omit in toc -->
