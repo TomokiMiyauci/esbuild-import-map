@@ -1,8 +1,7 @@
-import { toFileUrl } from "@std/path/to-file-url";
 import { fromFileUrl } from "@std/path/from-file-url";
-import { isAbsolute } from "@std/path/is-absolute";
 import { type ImportMapJson, parseFromJson } from "import_map";
 import { importMapToRegExp } from "./regexp.ts";
+import { resolveReferrer } from "./referrer.ts";
 import type { Plugin } from "esbuild";
 
 export interface ImportMap {
@@ -50,9 +49,9 @@ export function importMapPlugin(args: Readonly<ImportMapPluginArgs>): Plugin {
       build.onResolve({ filter }, (args) => {
         const { kind, importer, resolveDir, path, pluginData } = args;
 
-        if (pluginData === done || !isAbsolute(importer)) return;
+        if (pluginData === done) return;
 
-        const referrer = toFileUrl(importer);
+        const referrer = resolveReferrer(args);
         const resolved = importMap.resolve(path, referrer);
         const specifier = resolved.startsWith("file:")
           ? fromFileUrl(resolved)
