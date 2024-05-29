@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0-beta.1...1.0.0-beta.2) (2024-05-29)
+
+
+### Features
+
+* **referrer:** add resolving args to referrer url ([a826449](https://github.com/TomokiMiyauci/esbuild-import-map/commit/a8264492ce6c144aa9b5da571034c7b31db38e28))
+
 # 1.0.0-beta.1 (2024-05-28)
 
 
