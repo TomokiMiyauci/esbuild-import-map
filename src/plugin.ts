@@ -62,6 +62,7 @@ export function importMapPlugin(args: Readonly<ImportMapPluginArgs>): Plugin {
           importer,
           resolveDir,
           pluginData: done,
+          with: args.with,
         });
       });
     },
