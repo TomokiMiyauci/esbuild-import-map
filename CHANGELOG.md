@@ -1,3 +1,16 @@
+# [1.0.0-beta.3](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0-beta.2...1.0.0-beta.3) (2024-06-04)
+
+
+### Bug Fixes
+
+* **plugin:** pass `with` field to build.resolve ([a7f1fc6](https://github.com/TomokiMiyauci/esbuild-import-map/commit/a7f1fc6e1d0536f2b5ba5d309c9fb8aa4c895047))
+* **referrer:** handle the case where `importer` is empty ([8446dd4](https://github.com/TomokiMiyauci/esbuild-import-map/commit/8446dd4f3d56643677ef6122deb676ab944d6141))
+
+
+### Features
+
+* **plugin:** cahgne to not register a resolve hook if import map is empty ([44750bd](https://github.com/TomokiMiyauci/esbuild-import-map/commit/44750bd3c370bc3125a055183756ec027f55fed2))
+
 # [1.0.0-beta.2](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0-beta.1...1.0.0-beta.2) (2024-05-29)
 
 
