@@ -20,7 +20,7 @@ export function resolveReferrer(
 ): URL {
   const { namespace, importer, resolveDir } = args;
 
-  if (namespace === "file") return toFileUrl(importer);
+  if (namespace === "file" && importer) return toFileUrl(importer);
 
   const urlLike = URL.parse(importer);
 
