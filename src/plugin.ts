@@ -43,8 +43,11 @@ export function importMapPlugin(args: Readonly<ImportMapPluginArgs>): Plugin {
     name: "import-map",
     async setup(build) {
       const importMapJson = normalize(args.importMap);
-      const importMap = await parseFromJson(args.baseURL, importMapJson);
       const filter = importMapToRegExp(importMapJson);
+
+      if (!filter) return;
+
+      const importMap = await parseFromJson(args.baseURL, importMapJson);
 
       build.onResolve({ filter }, (args) => {
         const { kind, importer, resolveDir, path, pluginData } = args;

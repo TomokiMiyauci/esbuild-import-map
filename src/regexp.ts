@@ -6,11 +6,14 @@ export interface ImportMapLike {
   scopes?: Record<string, Record<string, unknown>>;
 }
 
-export function importMapToRegExp(importMap: ImportMapLike): RegExp {
+export function importMapToRegExp(importMap: ImportMapLike): RegExp | null {
   const { scopes = {}, imports = {} } = importMap;
   const importsKeys = Object.keys(imports);
   const scopesKeys = Object.values(scopes).flatMap(Object.keys.bind(Object));
   const allKeys = distinct([...importsKeys, ...scopesKeys]);
+
+  if (!allKeys.length) return null;
+
   const pattern = allKeys.map(escape).map(wrapByMatcher).join("|");
 
   return new RegExp(pattern);
