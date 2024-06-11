@@ -32,11 +32,11 @@ import { importMapPlugin } from "@miyauci/esbuild-import-map";
 import { build } from "esbuild";
 
 await build({
-  stdin: { contents: `import "react";` },
+  stdin: { contents: `import "@/mod.ts";`, resolveDir: import.meta.dirname },
   plugins: [importMapPlugin({
     url: import.meta.resolve("./import_map.json"),
     importMap: {
-      imports: { "react": "npm:react@^18" },
+      imports: { "@/": "./src/" },
     },
   })],
   bundle: true,

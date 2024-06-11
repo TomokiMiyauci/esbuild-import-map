@@ -28,15 +28,15 @@ const done = Symbol("done");
  * import { build } from "esbuild";
  *
  * await build({
- *   stdin: { contents: `import "react";` },
- *   plugins: [importMapPlugin({
- *     url: import.meta.resolve("./import_map.json"),
- *     importMap: {
- *       imports: { "react": "npm:react@^18" },
- *     },
- *   })],
- *   bundle: true,
- *   format: "esm",
+ *  stdin: { contents: `import "@/mod.ts";`, resolveDir: import.meta.dirname },
+ *  plugins: [importMapPlugin({
+ *    url: import.meta.resolve("./import_map.json"),
+ *    importMap: {
+ *      imports: { "@/": "./src/" },
+ *    },
+ *  })],
+ *  bundle: true,
+ *  format: "esm",
  * });
  * ```
  */
