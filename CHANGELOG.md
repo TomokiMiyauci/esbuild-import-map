@@ -1,3 +1,15 @@
+# [1.0.0-beta.4](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0-beta.3...1.0.0-beta.4) (2024-06-11)
+
+
+### Bug Fixes
+
+* **referrer:** check importer is absolute path or not ([549449f](https://github.com/TomokiMiyauci/esbuild-import-map/commit/549449f6fe5e7d97fe2b7cc9c25f365af1e0e703))
+
+
+### Features
+
+* **plugin:** rename plugin argument interface, rename it's field ([d5b1454](https://github.com/TomokiMiyauci/esbuild-import-map/commit/d5b145442a207e22351929f296a5faaaf082e572))
+
 # [1.0.0-beta.3](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0-beta.2...1.0.0-beta.3) (2024-06-04)
 
 
