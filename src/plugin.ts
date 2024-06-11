@@ -1,17 +1,9 @@
-import { fromFileUrl } from "@std/path/from-file-url";
-import { type ImportMapJson, parseFromJson } from "import_map";
+import { parseFromJson } from "import_map";
+import type { Plugin } from "esbuild";
 import { importMapToRegExp } from "./regexp.ts";
 import { resolveReferrer } from "./referrer.ts";
-import type { Plugin } from "esbuild";
-
-/** Import map definition. */
-export interface ImportMap {
-  /** A map of specifiers to their remapped specifiers. */
-  imports?: Record<string, string>;
-
-  /** Define a scope which remaps a specifier in only a specified scope. */
-  scopes?: Record<string, Record<string, string>>;
-}
+import { normalizeImportMap, normalizeSpecifier } from "./utils.ts";
+import type { ImportMap } from "./types.ts";
 
 /** Import map location URL and it's value. */
 export interface ImportMapResource {
@@ -78,12 +70,4 @@ export function importMapPlugin(resource: Readonly<ImportMapResource>): Plugin {
       });
     },
   };
-}
-
-export function normalizeImportMap(importMap: ImportMap): ImportMapJson {
-  return { imports: importMap.imports ?? {}, scopes: importMap.scopes };
-}
-
-export function normalizeSpecifier(specifier: string): string {
-  return specifier.startsWith("file:") ? fromFileUrl(specifier) : specifier;
 }
