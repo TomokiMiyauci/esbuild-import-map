@@ -2,7 +2,7 @@ import { normalizeImportMap, normalizeSpecifier } from "./utils.ts";
 import type { ImportMap } from "./types.ts";
 import { describe, it } from "@std/testing/bdd";
 import { expect } from "@std/expect";
-import type { ImportMapJson } from "import_map";
+import type { ImportMapJson } from "@deno/import_map";
 
 describe("normalizeImportMap", () => {
   it("should return normalized import map", () => {

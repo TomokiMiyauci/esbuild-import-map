@@ -1,6 +1,7 @@
 import { fromFileUrl } from "@std/path/from-file-url";
-import { filterValues, mapValues } from "@std/collections";
-import type { ImportMapJson } from "import_map";
+import { filterValues } from "@std/collections/filter-values";
+import { mapValues } from "@std/collections/map-values";
+import type { ImportMapJson } from "@deno/import_map";
 import type { ImportMap } from "./types.ts";
 
 export function normalizeImportMap(importMap: ImportMap): ImportMapJson {

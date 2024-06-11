@@ -1,4 +1,4 @@
-import { parseFromJson } from "import_map";
+import { parseFromJson } from "@deno/import_map";
 import type { Plugin } from "esbuild";
 import { importMapToRegExp } from "./regexp.ts";
 import { resolveReferrer } from "./referrer.ts";

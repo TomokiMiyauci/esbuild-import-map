@@ -1,7 +1,7 @@
 {
   "name": "@miyauci/esbuild-import-map",
   "tasks": {
-    "test": "deno test --doc"
+    "test": "deno test --allow-read --allow-env --allow-run --doc"
   },
   "lint": {
     "exclude": ["vendor"]
@@ -15,17 +15,14 @@
   "exclude": ["CHANGELOG.md"],
   "imports": {
     "@miyauci/esbuild-import-map": "./src/mod.ts",
-    "@std/collections/distinct": "jsr:/@std/collections@^0.224.1/distinct",
+    "@std/collections": "jsr:@std/collections@^0.224.2",
     "@std/expect": "jsr:@std/expect@^0.224.2",
     "@std/path": "jsr:@std/path@^0.225.1",
-    "@std/path/from-file-url": "jsr:/@std/path@^0.225.1/from-file-url",
-    "@std/path/is-absolute": "jsr:/@std/path@^0.225.1/is-absolute",
-    "@std/path/to-file-url": "jsr:/@std/path@^0.225.1/to-file-url",
     "@std/regexp": "jsr:/@std/regexp@^0.224.1",
-    "@std/testing/bdd": "jsr:@std/testing@^0.224.0/bdd",
+    "@std/testing": "jsr:@std/testing@^0.224.0",
     "@std/url": "jsr:@std/url@^0.224.0",
     "esbuild": "npm:/esbuild@^0.21.0",
-    "import_map": "./vendor/deno.land/x/import_map@v0.19.1/mod.ts"
+    "@deno/import_map": "./vendor/deno.land/x/import_map@v0.19.1/mod.ts"
   },
   "exports": "./src/mod.ts"
 }
