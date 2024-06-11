@@ -15,7 +15,11 @@ export interface ImportMap {
 
 /** Import map location URL and it's value. */
 export interface ImportMapResource {
-  /** Import map location URL. */
+  /** Import map location URL.
+   *
+   * @example string
+   * "file:///path/to/import_map.json"
+   */
   url: URL | string;
 
   /** Import map as JavaScript Object. */

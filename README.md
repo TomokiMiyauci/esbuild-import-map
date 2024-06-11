@@ -27,9 +27,6 @@ npx jsr add @miyauci/esbuild-import-map
 
 ## Usage
 
-`importMap` specifies a JavaScript Object. `baseURL` specifies the URL of import
-map.
-
 ```ts
 import { importMapPlugin } from "@miyauci/esbuild-import-map";
 import { build } from "esbuild";
