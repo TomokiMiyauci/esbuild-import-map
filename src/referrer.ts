@@ -20,7 +20,9 @@ export function resolveReferrer(
 ): URL {
   const { namespace, importer, resolveDir } = args;
 
-  if (namespace === "file" && importer) return toFileUrl(importer);
+  if (namespace === "file" && isAbsolute(importer)) {
+    return toFileUrl(importer);
+  }
 
   const urlLike = URL.parse(importer);
 
@@ -37,7 +39,7 @@ export function resolveReferrer(
     throw new Error("Specify an absolute path for `stdin.resolveDir`");
   }
 
-  throw new Error("`importer`, `resolveDir` or `namespace` is invalid");
+  throw new Error("`importer`, `resolveDir` or `namespace` are invalid");
 }
 
 const STDIN = "<stdin>";
