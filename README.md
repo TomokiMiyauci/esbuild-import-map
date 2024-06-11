@@ -37,7 +37,7 @@ import { build } from "esbuild";
 await build({
   stdin: { contents: `import "react";` },
   plugins: [importMapPlugin({
-    baseURL: import.meta.resolve("./import_map.json"),
+    url: import.meta.resolve("./import_map.json"),
     importMap: {
       imports: { "react": "npm:react@^18" },
     },

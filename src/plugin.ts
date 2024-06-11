@@ -9,8 +9,9 @@ export interface ImportMap {
   scopes?: Record<string, Record<string, string>>;
 }
 
-export interface ImportMapPluginArgs {
-  baseURL: URL | string;
+export interface ImportMapResource {
+  /** Import map location URL. */
+  url: URL | string;
 
   /** Import map as JavaScript Object. */
   importMap: ImportMap;
@@ -20,7 +21,7 @@ const done = Symbol("done");
 
 /** Create import-map plugin for esbuild.
  *
- * @example
+ * @example Basic usage
  * ```ts
  * import { importMapPlugin } from "@miyauci/esbuild-import-map";
  * import { build } from "esbuild";
@@ -28,7 +29,7 @@ const done = Symbol("done");
  * await build({
  *   stdin: { contents: `import "react";` },
  *   plugins: [importMapPlugin({
- *     baseURL: import.meta.resolve("./import_map.json"),
+ *     url: import.meta.resolve("./import_map.json"),
  *     importMap: {
  *       imports: { "react": "npm:react@^18" },
  *     },
@@ -38,16 +39,16 @@ const done = Symbol("done");
  * });
  * ```
  */
-export function importMapPlugin(args: Readonly<ImportMapPluginArgs>): Plugin {
+export function importMapPlugin(resource: Readonly<ImportMapResource>): Plugin {
   return {
     name: "import-map",
     async setup(build) {
-      const importMapJson = normalize(args.importMap);
+      const importMapJson = normalizeImportMap(resource.importMap);
       const filter = importMapToRegExp(importMapJson);
 
       if (!filter) return;
 
-      const importMap = await parseFromJson(args.baseURL, importMapJson);
+      const importMap = await parseFromJson(resource.url, importMapJson);
 
       build.onResolve({ filter }, (args) => {
         const { kind, importer, resolveDir, path, pluginData } = args;
@@ -56,9 +57,7 @@ export function importMapPlugin(args: Readonly<ImportMapPluginArgs>): Plugin {
 
         const referrer = resolveReferrer(args);
         const resolved = importMap.resolve(path, referrer);
-        const specifier = resolved.startsWith("file:")
-          ? fromFileUrl(resolved)
-          : resolved;
+        const specifier = normalizeSpecifier(resolved);
 
         return build.resolve(specifier, {
           kind,
@@ -72,6 +71,10 @@ export function importMapPlugin(args: Readonly<ImportMapPluginArgs>): Plugin {
   };
 }
 
-export function normalize(importMap: ImportMap): ImportMapJson {
+export function normalizeImportMap(importMap: ImportMap): ImportMapJson {
   return { imports: importMap.imports ?? {}, scopes: importMap.scopes };
+}
+
+export function normalizeSpecifier(specifier: string): string {
+  return specifier.startsWith("file:") ? fromFileUrl(specifier) : specifier;
 }
