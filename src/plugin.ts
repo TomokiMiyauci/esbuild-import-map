@@ -4,11 +4,16 @@ import { importMapToRegExp } from "./regexp.ts";
 import { resolveReferrer } from "./referrer.ts";
 import type { Plugin } from "esbuild";
 
+/** Import map definition. */
 export interface ImportMap {
+  /** A map of specifiers to their remapped specifiers. */
   imports?: Record<string, string>;
+
+  /** Define a scope which remaps a specifier in only a specified scope. */
   scopes?: Record<string, Record<string, string>>;
 }
 
+/** Import map location URL and it's value. */
 export interface ImportMapResource {
   /** Import map location URL. */
   url: URL | string;
