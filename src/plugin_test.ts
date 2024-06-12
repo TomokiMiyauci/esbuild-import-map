@@ -47,4 +47,23 @@ describe("importMapPlugin", () => {
       }),
     ).resolves.toBeTruthy();
   });
+
+  it("should return when falling into self-recursion ", async () => {
+    await expect(
+      build({
+        ...baseOptions,
+        stdin: {
+          contents: `import "node:test";`,
+          resolveDir: import.meta.dirname,
+        },
+        plugins: [
+          importMapPlugin({
+            url: import.meta.resolve("./import_map.json"),
+            importMap: { imports: { "node:test": "node:test" } },
+          }),
+        ],
+        external: ["node:test"],
+      }),
+    ).resolves.toBeTruthy();
+  });
 });
