@@ -3,7 +3,7 @@ import { expect } from "@std/expect";
 import { type ImportMapLike, importMapToRegExp } from "./regexp.ts";
 
 describe("importMapToRegExp", () => {
-  it("should return empty regexp", () => {
+  it("should return null", () => {
     const table: ImportMapLike[] = [
       {},
       { imports: {} },
@@ -13,7 +13,7 @@ describe("importMapToRegExp", () => {
     ];
 
     table.forEach((importMap) => {
-      expect(importMapToRegExp(importMap)).toEqual(new RegExp(""));
+      expect(importMapToRegExp(importMap)).toEqual(null);
     });
   });
 
