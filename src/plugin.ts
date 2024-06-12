@@ -11,6 +11,9 @@ export interface ImportMapResource {
    *
    * @example string
    * "file:///path/to/import_map.json"
+   *
+   * @example URL
+   * new URL("file:///path/to/import_map.json")
    */
   url: URL | string;
 
