@@ -11,6 +11,7 @@ const baseOptions = {
   bundle: true,
   write: false,
   format: "esm",
+  logLevel: "silent",
 } satisfies BuildOptions;
 
 describe("importMapPlugin", () => {
