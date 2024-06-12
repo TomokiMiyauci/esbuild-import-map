@@ -1,5 +1,11 @@
 # esbuild-import-map
 
+[![JSR](https://jsr.io/badges/@miyauci/esbuild-import-map)](https://jsr.io/@miyauci/esbuild-import-map)
+[![codecov](https://codecov.io/gh/TomokiMiyauci/esbuild-import-map/graph/badge.svg?token=mdFquW0o8i)](https://codecov.io/gh/TomokiMiyauci/esbuild-import-map)
+[![GitHub](https://img.shields.io/github/license/TomokiMiyauci/esbuild-import-map)](https://github.com/TomokiMiyauci/esbuild-import-map/blob/main/LICENSE)
+[![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
+
 An [esbuild](https://github.com/evanw/esbuild) plugin for
 [import-maps](https://github.com/WICG/import-maps#multiple-import-map-support).
 
