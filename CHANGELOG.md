@@ -1,3 +1,10 @@
+# [1.0.0-beta.5](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0-beta.4...1.0.0-beta.5) (2024-06-12)
+
+
+### Features
+
+* **plugin:** rename field to `url` ([2696456](https://github.com/TomokiMiyauci/esbuild-import-map/commit/26964569a73a843ff0c5426f70968dd1a3d08af9))
+
 # [1.0.0-beta.4](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0-beta.3...1.0.0-beta.4) (2024-06-11)
 
 
