@@ -45,10 +45,10 @@ jobs:
           deno-version: ${{ matrix.deno }}
 
       - name: Test
-        run: deno task test --coverage=coverage
+        run: deno task test --coverage
 
       - name: Generate coverage
-        run: deno coverage coverage --output=cov_profile.lcov --lcov
+        run: deno task coverage --output=cov_profile.lcov --lcov
 
       - uses: codecov/codecov-action@v4
         with:

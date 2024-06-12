@@ -1,7 +1,8 @@
 {
   "name": "@miyauci/esbuild-import-map",
   "tasks": {
-    "test": "deno test --allow-read --allow-env --allow-run --doc"
+    "test": "deno test --allow-read --allow-env --allow-run --doc",
+    "coverage": "deno coverage --exclude=vendor"
   },
   "lint": {
     "exclude": ["vendor"]
