@@ -22,7 +22,7 @@
     "@std/regexp": "jsr:/@std/regexp@^0.224.1",
     "@std/testing": "jsr:@std/testing@^0.224.0",
     "@std/url": "jsr:@std/url@^0.224.0",
-    "esbuild": "npm:/esbuild@^0.21.0",
+    "esbuild": "npm:/esbuild@^0.22.0",
     "@deno/import_map": "./vendor/deno.land/x/import_map@v0.19.1/mod.ts"
   },
   "exports": "./src/mod.ts"
