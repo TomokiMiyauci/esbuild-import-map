@@ -1,3 +1,10 @@
+# [1.1.0-beta.1](https://github.com/TomokiMiyauci/esbuild-import-map/compare/1.0.0...1.1.0-beta.1) (2024-07-02)
+
+
+### Features
+
+* update deps version ([00b4f16](https://github.com/TomokiMiyauci/esbuild-import-map/commit/00b4f169dbdf5e1a87fb39778e5c5e902e995f5e))
+
 # 1.0.0 (2024-06-12)
 
 
